@@ -8,4 +8,4 @@
 - NodeJS: is a server side JavaScript execution environment. It’s a platform built on Google Chrome’s V8 JavaScript runtime. It helps in building highly scalable and concurrent applications rapidly.
 
 # Project Board: Jira URL
-- https://mtd.atlassian.net/jira/software/projects/MTB/boards/11
+- https://mtd.atlassian.net/jira/software/projects/MTB/boards/11/backlog
