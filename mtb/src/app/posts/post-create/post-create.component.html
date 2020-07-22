@@ -1,3 +1,9 @@
-<textarea rows="6"></textarea>
-<hr />
-<button (click)="onAddPost()">Save Post</button>
+<!-- Material input -->
+<div class="md-form">
+    <input type="text" id="form1" class="form-control">
+    <label for="form1">Title</label>
+  </div>
+<div id="wysiwyg"><mdb-wysiwyg  [(ngModel)]="enteredValue"></mdb-wysiwyg></div>
+<button (click)="onAddPost()" type="button" class="btn btn-success">Submit</button>
+<button type="button" class="btn btn-danger">Cancel</button>
+<p>{{ newPost }}</p>
