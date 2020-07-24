@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { AccordionModule, WavesModule } from 'ng-uikit-pro-standard'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-post-list',

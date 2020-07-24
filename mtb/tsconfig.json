@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ng-uikit-pro-standard/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ng-uikit-pro-standard/tsconfig.spec.json"
     }
-]
+  ]
 }
