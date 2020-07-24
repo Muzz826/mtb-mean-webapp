@@ -1,7 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~ng-uikit-pro-standard/assets/scss/core/colors";
 @import "~ng-uikit-pro-standard/assets/scss/core/variables";
 @import "~ng-uikit-pro-standard/assets/scss/core/variables-pro";
 
 @import "~ng-uikit-pro-standard/assets/scss/addons-pro/_blog-pro.scss";
 
+.card {
+    width: 80%;
+    margin:auto;
+}
+
+mdb-wysiwyg {
+    width: 100%;
+}
+
+.button {
+    padding: 1%;
+}
