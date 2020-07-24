@@ -1,10 +1,16 @@
 <!-- Material input -->
 <div class="card">
-<mdb-wysiwyg  [(ngModel)]="enteredValue"></mdb-wysiwyg>
-
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+        <!-- Material input -->
+        <div class="md-form form-group mt-5">
+          <input mdbInput type="text" class="form-control" id="formGroupExampleInputMD" ngModel required name="title" placeholder="Enter Title Here">
+          <label for="formGroupExampleInputMD"></label>
+        <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+        <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
+        </div>
+        <mdb-wysiwyg required ngModel="content"></mdb-wysiwyg>
 <div class="button">
-<button (click)="onAddPost()" type="button" class="btn btn-success">Submit</button>
-<button type="button" class="btn btn-danger">Cancel</button>
-</div>
-<p>{{ newPost }}</p>
+<button type="submit" class="btn btn-success">Submit</button>
+<button type="reset" class="btn btn-danger">Cancel</button></div>
+    </form>
 </div>
