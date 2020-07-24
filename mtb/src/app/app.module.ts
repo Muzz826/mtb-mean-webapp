@@ -1,12 +1,17 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { MDBBootstrapModulesPro, MDBSpinningPreloader, AccordionModule, WavesModule } from 'ng-uikit-pro-standard';
-import { NgModule } from '@angular/core';
-import { PostCreateComponent } from "./posts/post-create/post-create.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MdbWysiwygModule } from 'mdb-wysiwyg';
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
+
 import { HeaderComponent } from "./header/header.component";
+import { PostCreateComponent } from "./posts/post-create/post-create.component";
 import { PostListComponent } from "./posts/post-list/post-list.component";
+import { MdbWysiwygModule } from 'mdb-wysiwyg';
+import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,16 @@ import { PostListComponent } from "./posts/post-list/post-list.component";
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModulesPro.forRoot(),
+    BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
+    ToastModule.forRoot(),
+    MDBBootstrapModulesPro.forRoot(),
+    AgmCoreModule.forRoot({}),
     MdbWysiwygModule,
-    AccordionModule,
-    WavesModule,
   ],
   providers: [MDBSpinningPreloader],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:      [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
