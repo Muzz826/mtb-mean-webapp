@@ -29,6 +29,7 @@ import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-ui
     MDBBootstrapModulesPro.forRoot(),
     AgmCoreModule.forRoot({}),
     MdbWysiwygModule,
+    HttpClientModule,
   ],
   providers: [MDBSpinningPreloader],
   bootstrap: [AppComponent],
