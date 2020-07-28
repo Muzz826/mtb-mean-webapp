@@ -3,6 +3,9 @@
     <mdb-accordion-item-head>
       {{ post.title }}
     </mdb-accordion-item-head>
+    <div class="post-iamge">
+      <img src="post.imagePath" [alt]="post.title" />
+    </div>
     <mdb-accordion-item-body>
       <p>{{ post.content }}</p>
       <div>

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
@@ -25,7 +25,7 @@ import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-ui
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ToastModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
