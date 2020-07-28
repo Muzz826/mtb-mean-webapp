@@ -4,13 +4,13 @@
       {{ post.title }}
     </mdb-accordion-item-head>
     <mdb-accordion-item-body>
-      {{ post.content }}
+      <p>{{ post.content }}</p>
       <div>
-        <button type="button" mdbBtn color="primary" mdbWavesEffect>EDIT</button><button type="button" mdbBtn color="danger" mdbWavesEffect (click)="onDelete(post.id)">DELETE</button>
+        <a mdbBtn color="primary" mdbWavesEffect [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mdbBtn color="danger" mdbWavesEffect (click)="onDelete(post.id)">DELETE</button>
         </div>
     </mdb-accordion-item-body>
   </mdb-accordion-item>
   <p class="info-text lead" *ngIf="posts.length <= 0">No posts added yet!</p>
 
 
-  

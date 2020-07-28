@@ -1,12 +1,13 @@
 <!-- Material input -->
 <div class="card">
-    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <form (submit)="onSavePost(postForm)" #postForm="ngForm">
         <!-- Material input -->
         <div class="md-form form-group mt-5">
-          <input mdbInput type="text" class="form-control" id="formGroupExampleInputMD" ngModel required name="title" placeholder="Enter Title Here">
+          <input mdbInput type="text" class="form-control" id="formGroupExampleInputMD" [ngModel]="post?.title" required name="title" placeholder="Enter Title Here" #title="ngModel">
           <label for="formGroupExampleInputMD"></label>
+          <mdb-wysiwyg mdbInput type="text" class="form-control" id="formGroupExampleInputMD" [ngModel]="post?.content" required name="content" placeholder="Enter content Here" #content="ngModel">
+          </mdb-wysiwyg>
         </div>
-        <mdb-wysiwyg required ngModel="content" name="content"></mdb-wysiwyg>
 <div class="button">
 <button type="submit" class="btn btn-success">Submit</button>
 <button type="reset" class="btn btn-danger">Cancel</button></div>
