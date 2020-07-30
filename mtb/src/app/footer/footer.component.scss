@@ -4,25 +4,6 @@
 @import '~ng-uikit-pro-standard/assets/scss/core/variables-pro';
 @import '~ng-uikit-pro-standard/assets/scss/core/msc/skins-pro';
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-ul {
-  display: flex;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-mat-toolbar {
+.page-footer {
   background-color: red;
 }

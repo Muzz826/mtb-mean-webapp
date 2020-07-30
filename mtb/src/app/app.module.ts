@@ -1,3 +1,5 @@
+import { FooterComponent } from './footer/footer.component';
+
 import { PostsModule } from './posts/posts.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { ErrorComponent } from './error/error.component';
@@ -18,7 +20,7 @@ import { HeaderComponent } from "./header/header.component";
 
 import { MdbWysiwygModule } from 'mdb-wysiwyg';
 import { MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
-import { WavesModule } from 'ng-uikit-pro-standard'
+import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard'
 
 
 
@@ -26,6 +28,7 @@ import { WavesModule } from 'ng-uikit-pro-standard'
   declarations: [
     AppComponent,
     HeaderComponent,
+    FooterComponent,
     ErrorComponent,
   ],
   imports: [
@@ -39,6 +42,8 @@ import { WavesModule } from 'ng-uikit-pro-standard'
     MdbWysiwygModule,
     HttpClientModule,
     WavesModule,
+    ButtonsModule,
+    IconsModule,
     AngularMaterialModule,
     PostsModule,
     AngularMaterialModule,
