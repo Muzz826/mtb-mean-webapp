@@ -1,19 +1,18 @@
-<mdb-accordion [multiple]="true" *ngIf="posts.length > 0">
-  <mdb-accordion-item *ngFor="let post of posts">
-    <mdb-accordion-item-head>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
       {{ post.title }}
-    </mdb-accordion-item-head>
-    <div class="post-iamge">
-      <img src="post.imagePath" [alt]="post.title" />
+    </mat-expansion-panel-header>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
     </div>
-    <mdb-accordion-item-body>
-      <p>{{ post.content }}</p>
-      <div>
-        <a mdbBtn color="primary" mdbWavesEffect [routerLink]="['/edit', post.id]">EDIT</a>
-      <button mdbBtn color="danger" mdbWavesEffect (click)="onDelete(post.id)">DELETE</button>
-        </div>
-    </mdb-accordion-item-body>
-  </mdb-accordion-item>
-  <p class="info-text lead" *ngIf="posts.length <= 0">No posts added yet!</p>
-
-
+    <p>{{ post.content }}</p>
+    <mat-action-row *ngIf="userIsAuthenticated && userId == post.creator">
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
