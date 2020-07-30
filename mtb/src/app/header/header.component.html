@@ -1,20 +1,26 @@
-<mat-toolbar color="primary">
-  <span>
-    <a routerLink="/">MTB</a>
-  </span>
-  <span class="spacer"></span>
-  <ul>
-    <li *ngIf="userIsAuthenticated">
-      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark red">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a routerLink="/" class="navbar-brand" >MTB</a></mdb-navbar-brand>
+ <links>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="userIsAuthenticated">
+          <a class="nav-link waves-light" routerLink="/create" mdbWavesEffect>New Post</a>
+      </li>
+      <li class="nav-item" *ngIf="!userIsAuthenticated">
+          <a class="nav-link waves-light" routerLink="/auth/login" mdbWavesEffect>Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!userIsAuthenticated">
+        <a class="nav-link waves-light" routerLink="/auth/signup" mdbWavesEffect>Sign-up</a>
     </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button (click)="onLogout()">Logout</button>
-    </li>
-  </ul>
-</mat-toolbar>
+    <li class="nav-item" *ngIf="!userIsAuthenticated">
+      <a class="nav-link waves-light" (click)="onLogout()" mdbWavesEffect>Logout</a>
+  </li>
+</ul>
+</links>
+</mdb-navbar>
+<!--/. Sidebar navigation -->
