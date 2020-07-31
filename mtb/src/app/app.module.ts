@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
 import { PostsModule } from './posts/posts.module';
@@ -20,7 +21,8 @@ import { HeaderComponent } from "./header/header.component";
 
 import { MdbWysiwygModule } from 'mdb-wysiwyg';
 import { MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
-import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard'
+import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -30,6 +32,7 @@ import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard'
     HeaderComponent,
     FooterComponent,
     ErrorComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard'
     PostsModule,
     AngularMaterialModule,
     AppRoutingModule,
+    RouterModule
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
