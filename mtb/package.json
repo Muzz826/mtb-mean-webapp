@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "npx compodoc -p src/tsconfig.app.json"
+    "compodoc": "npx compodoc -p tsconfig.app.json",
     "start:server": "nodemon server.js",
     "copy-scss": "cp -r projects/ng-uikit-pro-standard/src/lib/assets/ dist/ng-uikit-pro-standard",
     "copy-files": "cp projects/ng-uikit-pro-standard/src/lib/changelog projects/ng-uikit-pro-standard/src/lib/License.pdf dist/ng-uikit-pro-standard",

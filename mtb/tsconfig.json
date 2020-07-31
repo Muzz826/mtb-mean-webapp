@@ -8,10 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": ".mtb/tsconfig.app.json"
     },
     {
-      "path": "./tsconfig.spec.json"
+      "path": ".mtb/tsconfig.spec.json"
     },
     {
       "path": "./projects/ng-uikit-pro-standard/tsconfig.lib.json"
