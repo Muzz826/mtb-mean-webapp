@@ -23,6 +23,10 @@ import { MdbWysiwygModule } from 'mdb-wysiwyg';
 import { MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
 import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { TechTutorialsComponent } from './tech-tutorials/tech-tutorials.component';
+import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
 
 
 
@@ -33,6 +37,10 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     ErrorComponent,
     HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    TechTutorialsComponent,
+    TechReviewsComponent,
   ],
   imports: [
     BrowserModule,
