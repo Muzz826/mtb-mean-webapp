@@ -1,14 +1,80 @@
-<mat-card>
-  <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
-    <mat-form-field>
-      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
-      <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
-      <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Login</button>
-  </form>
-</mat-card>
+<!-- Material form login -->
+<mdb-card>
+  <mdb-spinner spinnerColor="blue" *ngIf="isLoading"></mdb-spinner>
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Login</strong>
+      </h5>
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+
+        <!-- Email -->
+        <div class="md-form">
+          <input id="LoginFormEmail" class="form-control" name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email mdbInput>
+          <label for="LoginFormEmail">E-mail</label>
+          <mdb-error *ngIf="emailInput.invalid">Please enter a valid email.</mdb-error>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form">
+          <input id="LoginFormPassword" class="form-control" type="password" name="password" ngModel placeholder="Password" #passwordInput="ngModel" required mdbInput>
+          <label for="LoginFormPassword">Password</label>
+           <mdb-error *ngIf="passwordInput.invalid">Please enter a valid password.</mdb-error>
+        </div>
+
+        <div class="d-flex justify-content-around">
+          <div>
+            <!-- Remember me -->
+            <mdb-checkbox>Remember me</mdb-checkbox>
+          </div>
+          <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- Login button -->
+        <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+          type="submit" *ngIf="!isLoading">Sign in</button>
+
+        <!-- Register -->
+        <p>Not a member?
+          <a href="">Register</a>
+        </p>
+
+        <!-- Social login -->
+        <p>or sign in with:</p>
+        <a type="button" mdbBtn floating="true" color="fb" size="sm">
+          <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn floating="true" color="tw" size="sm">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn floating="true" color="li" size="sm">
+          <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn floating="true" color="git" size="sm">
+          <mdb-icon fab icon="github"></mdb-icon>
+        </a>
+
+      </form>
+      <!-- Form -->
+
+    </mdb-card-body>
+
+  </mdb-card>
+
+  <!-- Material form login -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
