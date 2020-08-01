@@ -1,3 +1,4 @@
+import { MDBBootstrapModulesPro } from './../../../projects/ng-uikit-pro-standard/src/lib/mdb.module';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -9,6 +10,6 @@ import { AuthRoutingModule } from "../auth-routing.module";
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent],
-  imports: [CommonModule, AngularMaterialModule, FormsModule, AuthRoutingModule]
+  imports: [CommonModule, AngularMaterialModule, FormsModule, AuthRoutingModule, MDBBootstrapModulesPro,]
 })
 export class AuthModule {}

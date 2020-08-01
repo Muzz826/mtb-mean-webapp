@@ -4,7 +4,7 @@ import { PostListComponent } from "./posts/post-list/post-list.component";
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { HomeComponent } from './home/home.component';
-
+// This routing module is for when not logged into the app
 const routes: Routes = [
 
   // path and component for Post Listing
