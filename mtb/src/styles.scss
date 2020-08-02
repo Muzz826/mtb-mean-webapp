@@ -4,18 +4,7 @@
 @import '~ng-uikit-pro-standard/assets/scss/core/variables-pro';
 @import '~ng-uikit-pro-standard/assets/scss/core/msc/skins-pro';
 
-html, body { height: 100%; }
-
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-background-color: black; color: white;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-.jumbotron {
-  color: black;
-  background-color: #e9ecef;
-}
-
-
-
-
-

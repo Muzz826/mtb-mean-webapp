@@ -5,5 +5,12 @@
 @import '~ng-uikit-pro-standard/assets/scss/core/msc/skins-pro';
 
 .page-footer {
+  background-image: linear-gradient(red, black);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: red;
+  color: white;
+  text-align: center;
   }
