@@ -1,1 +1,92 @@
-<p>contact works!</p>
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Contact us</strong>
+    </h5>
+  </mdb-card-header>
+
+  <mdb-card-body class="px-lg-5 pt-0">
+
+  <form
+    class="text-center"
+    style="color: #757575;"
+  >
+    <div class="md-form mt-3">
+      <input
+        type="text"
+        formControlName="contactFormName"
+        id="materialContactFormName"
+        class="form-control"
+        mdbInput
+        mdbValidate
+      />
+      <label for="materialContactFormName">Name</label>
+    </div>
+
+    <div class="md-form">
+      <input
+        type="email"
+        formControlName="contactFormEmail"
+        id="materialContactFormEmail"
+        class="form-control"
+        mdbInput
+        mdbValidate
+      />
+      <label for="materialContactFormEmail">E-mail</label>
+    </div>
+
+    <span>Subject</span>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="md-form">
+          <mdb-select
+            formControlName="contactFormSubjects"
+            placeholder="Choose your option"
+            mdbValidate
+          ></mdb-select>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="md-form">
+      <textarea
+        type="text"
+        formControlName="contactFormMessage"
+        id="materialContactFormMessage"
+        class="form-control md-textarea"
+        mdbInput
+        mdbValidate
+      ></textarea>
+      <label for="materialContactFormMessage">Message</label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto d-flex justify-content-center">
+        <div class="md-form">
+          <mdb-checkbox mdbValidate formControlName="contactFormCopy"
+            >Send me a copy of this message</mdb-checkbox
+          >
+
+        </div>
+      </div>
+    </div>
+
+    <button
+      mdbBtn
+      color="info"
+      outline="true"
+      rounded="true"
+      block="true"
+      class="z-depth-0 my-4 waves-effect"
+      mdbWavesEffect
+      type="submit"
+    >
+      Send
+    </button>
+  </form>
+
+  </mdb-card-body>
+
+</mdb-card>

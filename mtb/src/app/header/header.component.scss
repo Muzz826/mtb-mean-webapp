@@ -4,6 +4,7 @@
 @import '~ng-uikit-pro-standard/assets/scss/core/variables-pro';
 @import '~ng-uikit-pro-standard/assets/scss/core/msc/skins-pro';
 
+
 ul {
   list-style: none;
   padding: 0;
@@ -11,8 +12,8 @@ ul {
 }
 
 a {
-  text-decoration: none;
-  color: white;
+  text-decoration: solid;
+  color: black;
 }
 
 ul {
@@ -23,6 +24,3 @@ ul {
   flex: 1 1 auto;
 }
 
-mat-toolbar {
-  background-color: red;
-}
