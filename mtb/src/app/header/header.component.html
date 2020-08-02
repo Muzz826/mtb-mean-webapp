@@ -1,32 +1,37 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar red accent-4">
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a routerLink="/home" class="navbar-brand" >MTB</a></mdb-navbar-brand>
- <links>
-  <!-- Links -->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+  <mdb-navbar-brand>
+    <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>MTB</strong></a>
+  </mdb-navbar-brand>
+  <links>
+    <!-- Links -->
   <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"  *ngIf="!userIsAuthenticated">
-          <a class="nav-link waves-light" [routerLink]="['home']" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" *ngIf="!userIsAuthenticated">
-        <a class="nav-link waves-light" routerLink="/about" mdbWavesEffect>About</a>
+    <li class="nav-item active"  *ngIf="!userIsAuthenticated">
+        <a class="nav-link waves-light" [routerLink]="['home']" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item" *ngIf="!userIsAuthenticated">
-      <a class="nav-link waves-light" routerLink="/contact" mdbWavesEffect>Contact</a>
+      <a class="nav-link waves-light" routerLink="/about" mdbWavesEffect>About</a>
   </li>
-      <li class="nav-item" *ngIf="userIsAuthenticated">
-          <a class="nav-link waves-light" routerLink="/create" mdbWavesEffect>New Post</a>
-      </li>
-      <li class="nav-item" *ngIf="!userIsAuthenticated">
-          <a class="nav-link waves-light" routerLink="/auth/login" mdbWavesEffect>Login</a>
-      </li>
-      <li class="nav-item" *ngIf="!userIsAuthenticated">
-        <a class="nav-link waves-light" routerLink="/auth/signup" mdbWavesEffect>Sign-up</a>
-    </li>
+  <li class="nav-item" *ngIf="!userIsAuthenticated">
+    <a class="nav-link waves-light" routerLink="/contact" mdbWavesEffect>Contact</a>
+</li>
     <li class="nav-item" *ngIf="userIsAuthenticated">
-      <a class="nav-link waves-light" (click)="onLogout()" mdbWavesEffect>Logout</a>
+        <a class="nav-link waves-light" routerLink="/create" mdbWavesEffect>New Post</a>
+    </li>
+    <li class="nav-item" *ngIf="!userIsAuthenticated">
+        <a class="nav-link waves-light" routerLink="/auth/login" mdbWavesEffect>Login</a>
+    </li>
+    <li class="nav-item" *ngIf="!userIsAuthenticated">
+      <a class="nav-link waves-light" routerLink="/auth/signup" mdbWavesEffect>Sign-up</a>
   </li>
+  <li class="nav-item" *ngIf="userIsAuthenticated">
+    <a class="nav-link waves-light" (click)="onLogout()" mdbWavesEffect>Logout</a>
+</li>
 </ul>
-</links>
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+    </form>
+  </links>
 </mdb-navbar>
-<!--/. Sidebar navigation -->
