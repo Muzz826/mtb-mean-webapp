@@ -41,6 +41,7 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     ContactComponent,
     TechTutorialsComponent,
     TechReviewsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,7 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     PostsModule,
     AngularMaterialModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

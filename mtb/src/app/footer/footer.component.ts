@@ -1,6 +1,5 @@
-import { Component, OnInit, } from "@angular/core";
-// MDB Angular Pro
-import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard'
+import { Component, OnInit, } from '@angular/core';
+
 
 @Component({
   selector: 'app-footer',
