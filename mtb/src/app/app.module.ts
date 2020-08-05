@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
@@ -41,6 +42,8 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     ContactComponent,
     TechTutorialsComponent,
     TechReviewsComponent,
+    FooterComponent,
+
 
   ],
   imports: [
@@ -61,6 +64,7 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

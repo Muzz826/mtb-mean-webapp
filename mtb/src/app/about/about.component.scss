@@ -1,0 +1,16 @@
+body {
+  background-image: linear-gradient(red, black);
+}
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+}
