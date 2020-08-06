@@ -1,3 +1,5 @@
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { TechTutorialsComponent } from './tech-tutorials/tech-tutorials.component';
 import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
 import { ContactComponent } from './contact/contact.component';
@@ -24,8 +26,10 @@ const routes: Routes = [
   { path: 'tech-reviews', component: TechReviewsComponent },
   // path and component for tech tutorials
   { path: 'tech-tutorials', component: TechTutorialsComponent },
-
-
+   // path and component for post-create
+  { path: 'post-create', component: PostCreateComponent },
+   // path and component for post-list
+  { path: 'post-list', component: PostListComponent },
 ];
 
 @NgModule({
