@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'tech-reviews', component: TechReviewsComponent },
   // path and component for tech tutorials
   { path: 'tech-tutorials', component: TechTutorialsComponent },
-
+  
 
 ];
 
