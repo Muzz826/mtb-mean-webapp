@@ -1,52 +1,96 @@
-const app = require("./backend/app");
-const debug = require("debug")("node-angular");
-const http = require("http");
+const express = require('express');
+const nodemailer = require('nodemailer');
+const app = express();
+const port = 3000;
+const bodyParser = require('body-parser');
 
-const normalizePort = val => {
-  var port = parseInt(val, 10);
+const transporter = nodemailer.createTransport({
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
+  host: 'smtp.gmail.com',
+  provider: 'gmail',
+  port: 465,
+  secure: true,
+  auth: {
+    user: '', // Enter here email address from which you want to send emails
+    pass: '' // Enter here password for email account from which you want to send emails
+  },
+  tls: {
+  rejectUnauthorized: true
+  }
+});
+
+app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.post('/send', function (req, res) {
+
+  let senderName = req.body.contactFormName;
+  let senderEmail = req.body.contactFormEmail;
+  let messageSubject = req.body.contactFormSubjects;
+  let messageText = req.body.contactFormMessage;
+  let copyToSender = req.body.contactFormCopy;
+
+  let mailOptions = {
+    to: ['muzz826@gmail.com'], // Enter here the email address on which you want to send emails from your customers
+    from: senderName,
+    subject: messageSubject,
+    text: messageText,
+    replyTo: senderEmail
+  };
+
+  if (senderName === '') {
+    res.status(400);
+    res.send({
+    message: 'Bad request'
+    });
+    return;
   }
 
-  if (port >= 0) {
-    // port number
-    return port;
+  if (senderEmail === '') {
+    res.status(400);
+    res.send({
+    message: 'Bad request'
+    });
+    return;
   }
 
-  return false;
-};
-
-const onError = error => {
-  if (error.syscall !== "listen") {
-    throw error;
+  if (messageSubject === '') {
+    res.status(400);
+    res.send({
+    message: 'Bad request'
+    });
+    return;
   }
-  const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
-  switch (error.code) {
-    case "EACCES":
-      console.error(bind + " requires elevated privileges");
-      process.exit(1);
-      break;
-    case "EADDRINUSE":
-      console.error(bind + " is already in use");
-      process.exit(1);
-      break;
-    default:
-      throw error;
+
+  if (messageText === '') {
+    res.status(400);
+    res.send({
+    message: 'Bad request'
+    });
+    return;
   }
-};
 
-const onListening = () => {
-  const addr = server.address();
-  const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
-  debug("Listening on " + bind);
-};
+  if (copyToSender) {
+    mailOptions.to.push(senderEmail);
+  }
 
-const port = normalizePort(process.env.PORT || "3000");
-app.set("port", port);
+  transporter.sendMail(mailOptions, function (error, response) {
+    if (error) {
+      console.log(error);
+      res.end('error');
+    } else {
+      console.log('Message sent: ', response);
+      res.end('sent');
+    }
+  });
+});
 
-const server = http.createServer(app);
-server.on("error", onError);
-server.on("listening", onListening);
-server.listen(port);
+app.listen(port, function () {
+  console.log('Express started on port: ', port);
+});
