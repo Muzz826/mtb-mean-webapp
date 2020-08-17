@@ -22,30 +22,25 @@
           <li class="nav-item active"  *ngIf="userIsAuthenticated">
             <a class="nav-link waves-light" [routerLink]="['home']" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item" *ngIf="userIsAuthenticated">
+        <li class="nav-item">
           <a class="nav-link waves-light" routerLink="/about" mdbWavesEffect>About</a>
       </li>
-      <li class="nav-item" *ngIf="userIsAuthenticated">
+      <li class="nav-item">
         <a class="nav-link waves-light" routerLink="/contact" mdbWavesEffect>Contact</a>
     </li>
-    <li class="nav-item" *ngIf="userIsAuthenticated">
-      <a class="nav-link waves-light" routerLink="/tech-reviews" mdbWavesEffect>Tech Reviews</a>
-  </li>
   <li class="nav-item" *ngIf="userIsAuthenticated">
-    <a class="nav-link waves-light" routerLink="/tech-tutorials" mdbWavesEffect>Tech Tutorials</a>
+    <a class="nav-link waves-light" routerLink="/posts" mdbWavesEffect>Tech Reviews & Tutorials</a>
 </li>
         <li class="nav-item" *ngIf="userIsAuthenticated">
-            <a class="nav-link waves-light" routerLink="/create" mdbWavesEffect>New Post</a>
+            <a class="nav-link waves-light" routerLink="/create" mdbWavesEffect>New Article</a>
         </li>
-        <li class="nav-item" *ngIf="userIsAuthenticated">
-          <a class="nav-link waves-light" routerLink="app-post-list" mdbWavesEffect>Article Listing</a>
-        <li class="nav-item" *ngIf="userIsAuthenticated">
+        <li class="nav-item" *ngIf="!userIsAuthenticated">
             <a class="nav-link waves-light" routerLink="/auth/login" mdbWavesEffect>Login</a>
         </li>
-        <li class="nav-item" *ngIf="userIsAuthenticated">
+        <li class="nav-item" *ngIf="!userIsAuthenticated">
           <a class="nav-link waves-light" routerLink="/auth/signup" mdbWavesEffect>Sign-up</a>
       </li>
-      <li class="nav-item" *ngIf="!userIsAuthenticated">
+      <li class="nav-item" *ngIf="userIsAuthenticated">
         <a class="nav-link waves-light" (click)="onLogout()" mdbWavesEffect>Logout</a>
     </li>
 

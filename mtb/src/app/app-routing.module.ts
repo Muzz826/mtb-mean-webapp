@@ -14,14 +14,14 @@ import { TechTutorialsComponent } from './tech-tutorials/tech-tutorials.componen
 const routes: Routes = [
 
   // path and component for Post Listing
-  { path: '', component: PostListComponent },
+  { path: 'posts', component: PostListComponent },
 
   // path and component for Post Creation
   { path: 'create', component: PostCreateComponent, canActivate: [AuthGuard] },
   // path and component for editing a already created post
   { path: 'edit/:postId', component: PostCreateComponent, canActivate: [AuthGuard] },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-  {path: 'home', component: HomeComponent },
+  {path: '', component: HomeComponent },
   // path and component for login page
   { path: 'login', component: LoginComponent },
   // path and component for signup page
@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'tech-reviews', component: TechReviewsComponent },
   // path and component for tech tutorials
   { path: 'tech-tutorials', component: TechTutorialsComponent },
-  
+
 
 ];
 
