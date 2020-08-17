@@ -1,10 +1,4 @@
-@import "~ng-uikit-pro-standard/assets/scss/core/colors";
-@import "~ng-uikit-pro-standard/assets/scss/core/variables";
-@import "~ng-uikit-pro-standard/assets/scss/core/variables-pro";
-
-@import "~ng-uikit-pro-standard/assets/scss/addons-pro/_blog-pro.scss";
-
-.mat-form-field,
+mat-form-field,
 textarea {
   width: 100%;
 }

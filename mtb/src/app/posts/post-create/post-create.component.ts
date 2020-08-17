@@ -7,6 +7,11 @@ import { PostsService } from '../posts.service';
 import { Post } from '../post.model';
 import { mimeType } from './mime-type.validator';
 import { AuthService } from '../../auth/auth.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+
+
+
 
 @Component({
   selector: 'app-post-create',

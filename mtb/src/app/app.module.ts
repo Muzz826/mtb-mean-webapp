@@ -20,7 +20,6 @@ import { AgmCoreModule } from '@agm/core';
 
 import { HeaderComponent } from "./header/header.component";
 
-import { MdbWysiwygModule } from 'mdb-wysiwyg';
 import { MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
 import { WavesModule, ButtonsModule, IconsModule } from 'ng-uikit-pro-standard';
 import { HomeComponent } from './home/home.component';
@@ -28,7 +27,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TechTutorialsComponent } from './tech-tutorials/tech-tutorials.component';
 import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -53,8 +55,8 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     HttpClientModule,
     ToastModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
+    IconsModule,
     AgmCoreModule.forRoot({}),
-    MdbWysiwygModule,
     HttpClientModule,
     WavesModule,
     ButtonsModule,
@@ -65,6 +67,10 @@ import { TechReviewsComponent } from './tech-reviews/tech-reviews.component';
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatIconModule,
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
