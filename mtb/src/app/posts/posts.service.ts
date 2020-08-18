@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { Post } from './post.model';
 
+// variable for switching between dev environment and prod environment
 const BACKEND_URL = environment.apiUrl + '/posts/';
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +16,7 @@ export class PostsService {
   private postsUpdated = new Subject<{ posts: Post[]; postCount: number }>();
 
   constructor(private http: HttpClient, private router: Router) {}
-
+// gets all posts
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
@@ -46,7 +47,7 @@ export class PostsService {
         });
       });
   }
-
+// listens for any post updates and updates posts when changes are found
   getPostUpdateListener() {
     return this.postsUpdated.asObservable();
   }
@@ -60,11 +61,15 @@ export class PostsService {
       creator: string;
     }>(BACKEND_URL + id);
   }
-
+// function for adding new posts
   addPost(title: string, content: string, image: File) {
     const postData = new FormData();
+
+    // save post title to MongoDB Atlas
     postData.append('title', title);
+    // save post content to MongoDB Atlas
     postData.append('content', content);
+    // save post image to MongoDB Atlas
     postData.append('image', image, title);
     this.http
       .post<{ message: string; post: Post }>(
@@ -75,7 +80,7 @@ export class PostsService {
         this.router.navigate(['/']);
       });
   }
-
+// function to update post...triggered by using the edit button
   updatePost(id: string, title: string, content: string, image: File | string) {
     let postData: Post | FormData;
     if (typeof image === 'object') {
@@ -86,9 +91,13 @@ export class PostsService {
       postData.append('image', image, title);
     } else {
       postData = {
+        // id field for database reference
         id: id,
+      // title field for post/database
         title: title,
+     // content field for post/database
         content: content,
+    // image field for post/database
         imagePath: image,
         creator: null
       };
@@ -99,7 +108,7 @@ export class PostsService {
         this.router.navigate(['/']);
       });
   }
-
+// function to delete post...triggered by using the delete button
   deletePost(postId: string) {
     return this.http.delete(BACKEND_URL + postId);
   }
