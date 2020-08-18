@@ -51,13 +51,17 @@ export class PostCreateComponent implements OnInit, OnDestroy {
         asyncValidators: [mimeType]
       })
     });
+    // logic for editing an existing post
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      // checks if postid exists, before attempting edit
       if (paramMap.has('postId')) {
         this.mode = 'edit';
         this.postId = paramMap.get('postId');
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(postData => {
+          // checks if post is loading or not
           this.isLoading = false;
+          // parameters of the post
           this.post = {
             id: postData._id,
             title: postData.title,
@@ -88,19 +92,21 @@ export class PostCreateComponent implements OnInit, OnDestroy {
     };
     reader.readAsDataURL(file);
   }
-
+// logic for saving a
   onSavePost() {
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
     if (this.mode === 'create') {
+      // logic for saving a new post
       this.postsService.addPost(
         this.form.value.title,
         this.form.value.content,
         this.form.value.image
       );
     } else {
+      // logic for updating an existing post
       this.postsService.updatePost(
         this.postId,
         this.form.value.title,

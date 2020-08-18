@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   totalPosts = 0;
   // settings for how many posts to show her page
   postsPerPage = 2;
-// what page to start on
+  // what page to start on
   currentPage = 1;
   // setting to change how many posts per page as a user.
   pageSizeOptions = [1, 2, 5, 10];

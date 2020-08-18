@@ -1,3 +1,5 @@
+//model file for what fields a post should have
+
 const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({

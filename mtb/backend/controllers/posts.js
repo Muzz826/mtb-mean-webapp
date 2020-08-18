@@ -1,5 +1,5 @@
 const Post = require("../models/post");
-
+//logic for creating / saving a new post
 exports.createPost = (req, res, next) => {
   const url = req.protocol + "://" + req.get("host");
   const post = new Post({
@@ -25,7 +25,7 @@ exports.createPost = (req, res, next) => {
       });
     });
 };
-
+//logic for updating a post
 exports.updatePost = (req, res, next) => {
   let imagePath = req.body.imagePath;
   if (req.file) {
@@ -42,18 +42,21 @@ exports.updatePost = (req, res, next) => {
   Post.updateOne({ _id: req.params.id, creator: req.userData.userId }, post)
     .then(result => {
       if (result.n > 0) {
+        // message if update was successful
         res.status(200).json({ message: "Update successful!" });
       } else {
+        //message if update failed due to no auth
         res.status(401).json({ message: "Not authorized!" });
       }
     })
     .catch(error => {
       res.status(500).json({
-        message: "Couldn't udpate post!"
+        // message if unable to update post
+        message: "Couldn't update post!"
       });
     });
 };
-
+// logic used for getting posts from MongoDB
 exports.getPosts = (req, res, next) => {
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.page;
@@ -96,7 +99,7 @@ exports.getPost = (req, res, next) => {
       });
     });
 };
-
+//logic for deleting a post
 exports.deletePost = (req, res, next) => {
   Post.deleteOne({ _id: req.params.id, creator: req.userData.userId })
     .then(result => {
