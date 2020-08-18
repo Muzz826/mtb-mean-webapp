@@ -15,10 +15,15 @@ export class PostListComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
   isLoading = false;
   totalPosts = 0;
+  // settings for how many posts to show her page
   postsPerPage = 2;
+// what page to start on
   currentPage = 1;
+  // setting to change how many posts per page as a user.
   pageSizeOptions = [1, 2, 5, 10];
+  // user must be logged into to see posts
   userIsAuthenticated = true;
+
   userId: string;
   private postsSub: Subscription;
   private authStatusSub: Subscription;
@@ -29,8 +34,11 @@ export class PostListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    // checks to see if page has finished loading
     this.isLoading = true;
+    // grabs all posts for the current page to display
     this.postsService.getPosts(this.postsPerPage, this.currentPage);
+    // lists userid of post creator for current page of posts
     this.userId = this.authService.getUserId();
     this.postsSub = this.postsService
       .getPostUpdateListener()
@@ -39,6 +47,7 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.totalPosts = postData.postCount;
         this.posts = postData.posts;
       });
+      // checks whether user is logged in to see posts
     this.userIsAuthenticated = this.authService.getIsAuth();
     this.authStatusSub = this.authService
       .getAuthStatusListener()
@@ -47,19 +56,23 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.userId = this.authService.getUserId();
       });
   }
-
+// logic for changing post pages
   onChangedPage(pageData: PageEvent) {
     this.isLoading = true;
     this.currentPage = pageData.pageIndex + 1;
     this.postsPerPage = pageData.pageSize;
     this.postsService.getPosts(this.postsPerPage, this.currentPage);
   }
-
+// logic for what actions that happen when a post is deleted.
   onDelete(postId: string) {
+    // checks wither page is loaded for delting a post
     this.isLoading = true;
+    // deleting of post action
     this.postsService.deletePost(postId).subscribe(() => {
+      // refreshes page and gets new list of current posts
       this.postsService.getPosts(this.postsPerPage, this.currentPage);
     }, () => {
+      // checks whether loading has finished
       this.isLoading = false;
     });
   }

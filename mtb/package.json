@@ -1,6 +1,6 @@
 {
-  "name": "midstates",
-  "version": "0.0.0",
+  "name": "mtb-mean-app",
+  "version": "9.3.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -37,7 +37,7 @@
     "hammerjs": "^2.0.8",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.25",
-    "ng-uikit-pro-standard": "git+https://oauth2:Hsr1DUdejoi5yvr5B3sy@git.mdbootstrap.com/mdb/angular/ng-uikit-pro-standard.git",
+    "ng-uikit-pro-standard": "git+https://oauth2:sBG4bjRkVyfmPs9GEhV5@git.mdbootstrap.com/mdb/angular/ng-uikit-pro-standard.git",
     "nodemailer": "^6.4.11",
     "rxjs": "~6.5.5",
     "screenfull": "^3.3.0",
