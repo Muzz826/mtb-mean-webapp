@@ -1,3 +1,4 @@
+// added server for sending email for contact form, but not currently active....will be activated later (has been tested and works just need to setup an email for it)
 const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
@@ -15,7 +16,7 @@ const transporter = nodemailer.createTransport({
     pass: '' // Enter here password for email account from which you want to send emails
   },
   tls: {
-  rejectUnauthorized: true
+    rejectUnauthorized: true
   }
 });
 
@@ -47,7 +48,7 @@ app.post('/send', function (req, res) {
   if (senderName === '') {
     res.status(400);
     res.send({
-    message: 'Bad request'
+      message: 'Bad request'
     });
     return;
   }
@@ -55,7 +56,7 @@ app.post('/send', function (req, res) {
   if (senderEmail === '') {
     res.status(400);
     res.send({
-    message: 'Bad request'
+      message: 'Bad request'
     });
     return;
   }
@@ -63,7 +64,7 @@ app.post('/send', function (req, res) {
   if (messageSubject === '') {
     res.status(400);
     res.send({
-    message: 'Bad request'
+      message: 'Bad request'
     });
     return;
   }
@@ -71,7 +72,7 @@ app.post('/send', function (req, res) {
   if (messageText === '') {
     res.status(400);
     res.send({
-    message: 'Bad request'
+      message: 'Bad request'
     });
     return;
   }

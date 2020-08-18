@@ -1,3 +1,4 @@
+// Module for the Angular Material CSS framework being used in parts of the site
 import { NgModule } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';

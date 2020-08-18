@@ -1,7 +1,7 @@
 <!-- Material form login -->
 <div class="center-container">
-<mdb-card>
-  <mdb-spinner spinnerColor="blue" *ngIf="isLoading"></mdb-spinner>
+  <mdb-card>
+    <mdb-spinner spinnerColor="blue" *ngIf="isLoading"></mdb-spinner>
     <mdb-card-header class="primary-color white-text text-center py-4">
       <h3>
         <strong>Login</strong>
@@ -13,20 +13,23 @@
     <mdb-card-body class="px-lg-5 pt-0">
 
       <!-- Form -->
-      <form class="text-center" style="color: #757575;" (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+      <form class="text-center" style="color: #757575;" (submit)="onLogin(loginForm)" #loginForm="ngForm"
+        *ngIf="!isLoading">
 
         <!-- Email -->
         <div class="md-form">
-          <input id="LoginFormEmail" class="form-control" name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email mdbInput>
+          <input id="LoginFormEmail" class="form-control" name="email" ngModel type="email" placeholder="E-Mail"
+            #emailInput="ngModel" required email mdbInput>
           <label for="LoginFormEmail">E-mail</label>
           <mdb-error *ngIf="emailInput.invalid">Please enter a valid email.</mdb-error>
         </div>
 
         <!-- Password -->
         <div class="md-form">
-          <input id="LoginFormPassword" class="form-control" type="password" name="password" ngModel placeholder="Password" #passwordInput="ngModel" required mdbInput>
+          <input id="LoginFormPassword" class="form-control" type="password" name="password" ngModel
+            placeholder="Password" #passwordInput="ngModel" required mdbInput>
           <label for="LoginFormPassword">Password</label>
-           <mdb-error *ngIf="passwordInput.invalid">Please enter a valid password.</mdb-error>
+          <mdb-error *ngIf="passwordInput.invalid">Please enter a valid password.</mdb-error>
         </div>
 
         <div class="d-flex justify-content-around">
@@ -41,8 +44,8 @@
         </div>
 
         <!-- Login button -->
-        <button mdbBtn color="primary" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
-          type="submit" *ngIf="!isLoading">Sign in</button>
+        <button mdbBtn color="primary" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
+          mdbWavesEffect type="submit" *ngIf="!isLoading">Sign in</button>
 
         <!-- Register -->
         <p>Not a member?
@@ -60,9 +63,11 @@
   <!-- Material form login -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+  </script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-  </div>
+</div>

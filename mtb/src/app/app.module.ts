@@ -54,6 +54,7 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     HttpClientModule,
     ToastModule.forRoot(),
+    //Main CSS framework being used in the app. MDBootstrap Pro
     MDBBootstrapModulesPro.forRoot(),
     IconsModule,
     AgmCoreModule.forRoot({}),

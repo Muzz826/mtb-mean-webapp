@@ -1,3 +1,4 @@
+// model file for what fields a user should have
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 

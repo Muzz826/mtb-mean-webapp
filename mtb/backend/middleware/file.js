@@ -1,11 +1,11 @@
 const multer = require("multer");
-
+//valid images types for image upload
 const MIME_TYPE_MAP = {
   "image/png": "png",
   "image/jpeg": "jpg",
   "image/jpg": "jpg"
 };
-
+//checks if the image being uploaded is a valid type
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const isValid = MIME_TYPE_MAP[file.mimetype];

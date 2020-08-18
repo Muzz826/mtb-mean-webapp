@@ -1,3 +1,5 @@
+//This is the user management / creation script
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
